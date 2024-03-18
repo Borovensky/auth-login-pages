@@ -1,0 +1,18 @@
+@import "../../stylesheets/colors";
+
+.popup {
+  position: absolute;
+  width: auto;
+  min-width: 100px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $error-color;
+  color: $white;
+  background-color: $error-color;
+  border-radius: 6px;
+  padding: 5px 10px;
+  top: 20px;
+  right: 20px;
+}

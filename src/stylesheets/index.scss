@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'Basis Grotesque Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2, a, p, span {
+  user-select: none;
+  margin: 0;
+}

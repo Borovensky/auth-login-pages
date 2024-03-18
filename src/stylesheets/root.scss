@@ -1,0 +1,80 @@
+@import "./colors";
+
+.centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.app-container {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.central-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 400px;
+	position: absolute;
+	top: 292px;
+}
+
+.main-logo {
+	position: absolute;
+	top: 180px;
+}
+
+.row-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+	button + button {
+		margin-left: 20px;
+	}
+}
+
+.form-container {
+	width: 100%;
+
+	input {
+		margin-bottom: 25px;
+	}
+
+	button {
+		margin-bottom: 25px;
+	}
+}
+
+.small-text {
+	font-weight: 500;
+	font-size: 14px;
+	color: $text-color-light;
+	margin: 0;
+}
+
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.margin-bottom {
+	margin-bottom: 25px;
+}
+
+.hidden-field {
+	position: relative;
+	height: 0;
+	opacity: 0;
+	transition: all .4s ease-in-out;
+
+	&.hidden-field--visible {
+		height: 116px;
+		opacity: 1;
+	}
+}

@@ -1,0 +1,10 @@
+@import "../../stylesheets/colors";
+
+h2, .headline {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    align-items: center;
+    color: $gray900;
+    margin: 0 0 40px 0;
+}
