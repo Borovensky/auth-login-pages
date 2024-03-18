@@ -8,7 +8,7 @@ type InputProps = {
   type: string,
   placeholder: string,
   value: string,
-  label?: string, 
+  label?: string,
   onChange: (value: string) => void,
 }
 
@@ -32,16 +32,16 @@ const Input: React.FC<InputProps> = ({ id, type, placeholder, value, label, onCh
       />
       {type === "password"
         ? (
-        <EyeIcon
-          className={
-            classNames(
-              "eye-icon",
-              { "eye-icon--active": isPasswordVisible }
-            )
-          }
-          onClick={() => setPasswordVisible(!isPasswordVisible)}
-          style={label ? { top: '36px' } : {}}
-        />
+          <EyeIcon
+            className={
+              classNames(
+                "eye-icon",
+                { "eye-icon--active": isPasswordVisible }
+              )
+            }
+            onClick={() => setPasswordVisible(!isPasswordVisible)}
+            style={label ? { top: '36px' } : {}}
+          />
         )
         : null
       }

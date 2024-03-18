@@ -11,10 +11,10 @@ import classNames from "../utils/classnames";
 import isEmail from "../utils/isEmail";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-  const [showPopup, setShowPopup] = useState(false);
+	const [showPopup, setShowPopup] = useState(false);
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
 		event.preventDefault()
@@ -22,52 +22,52 @@ const Login: React.FC = () => {
 			const response = await fetch('https://auth-qa.qencode.com/v1/auth/login', {
 				method: "POST",
 				headers: {
-          'Content-Type': 'application/json',
-        },
+					'Content-Type': 'application/json',
+				},
 				body: JSON.stringify({ email, password }),
 			})
 
 			const data = await response.json();
 			if (data.error === 1) {
-        setError(String(data.detail));
-        setShowPopup(true);
-        setTimeout(() => setShowPopup(false), 2000);
-      }
+				setError(String(data.detail));
+				setShowPopup(true);
+				setTimeout(() => setShowPopup(false), 2000);
+			}
 		} catch (error) {
 			// error handling 
 		}
-  }
+	}
 
-  return (
-    <div className="central-container">
+	return (
+		<div className="central-container">
 			{showPopup && <Popup message={error} category="error" />}
-      <Headline text="Log in to your account" />
+			<Headline text="Log in to your account" />
 
-      <div className="row-container">
-        <Button onClick={() => null}>
-          <span>
+			<div className="row-container">
+				<Button onClick={() => null}>
+					<span>
 						<GoogleLogo style={{ paddingRight: '10px' }} />
 						Google
 					</span>
-        </Button>
-        <Button onClick={() => null}>
+				</Button>
+				<Button onClick={() => null}>
 					<span>
 						<GitHubLogo style={{ paddingRight: '10px' }} />
 						GitHub
 					</span>
-        </Button>
-      </div>
+				</Button>
+			</div>
 
-      <Divider text="OR" />
+			<Divider text="OR" />
 
-      <form className="form-container" onSubmit={handleSubmit}>
-        <Input
-          id="email"
-          type="email"
-          placeholder="Work email"
-          value={email}
-          onChange={value => setEmail(value)}
-        />
+			<form className="form-container" onSubmit={handleSubmit}>
+				<Input
+					id="email"
+					type="email"
+					placeholder="Work email"
+					value={email}
+					onChange={value => setEmail(value)}
+				/>
 				<div className={
 					classNames(
 						"hidden-field",
@@ -92,11 +92,11 @@ const Login: React.FC = () => {
 				>
 					<p>Log in to Qencode</p>
 				</Button>
-      </form>
+			</form>
 
-      <p className="small-text">Is your company new to Qencode? <Link to=''>Sign up</Link></p>
-    </div>
-  );
+			<p className="small-text">Is your company new to Qencode? <Link to=''>Sign up</Link></p>
+		</div>
+	);
 }
 
 export default Login;

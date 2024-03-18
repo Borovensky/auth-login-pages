@@ -11,7 +11,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({ children, onClick, submit, disabled, primary }) => {
-	
+
 	const onHandleClick = (event: MouseEvent<HTMLButtonElement>) => {
 		if (onClick) onClick();
 	}

@@ -13,17 +13,17 @@ const ForgotPassword: React.FC = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-		try {
-			const response = await fetch('https://auth-qa.qencode.com/v1/auth/password-reset', {
-				method: "POST",
-				headers: {
+    try {
+      const response = await fetch('https://auth-qa.qencode.com/v1/auth/password-reset', {
+        method: "POST",
+        headers: {
           'Content-Type': 'application/json',
         },
-				body: JSON.stringify({ email, redirect_url: "https://auth-qa.qencode.com/password-set" }),
-			})
+        body: JSON.stringify({ email, redirect_url: "https://auth-qa.qencode.com/password-set" }),
+      })
 
-			const data = await response.json();
-			if (data.error === 1) {
+      const data = await response.json();
+      if (data.error === 1) {
         setError(String(data.detail));
         setShowPopup(true);
         setTimeout(() => {
@@ -31,9 +31,9 @@ const ForgotPassword: React.FC = () => {
           navigate("/new-password")
         }, 2000);
       }
-		} catch (error) {
-			// error handling 
-		}
+    } catch (error) {
+      // error handling 
+    }
   }
 
   return (
@@ -48,14 +48,14 @@ const ForgotPassword: React.FC = () => {
           value={email}
           onChange={value => setEmail(value)}
         />
-				<Button
-					onClick={() => null}
-					submit
-					primary
+        <Button
+          onClick={() => null}
+          submit
+          primary
           disabled={email.length === 0}
-				>
-					<p>Send</p>
-				</Button>
+        >
+          <p>Send</p>
+        </Button>
         <Button
           onClick={() => navigate("/login")}
         >

@@ -1,7 +1,7 @@
 import "./divider.scss";
 
 type DividerProps = {
-	text?: string;
+  text?: string;
 }
 
 const Divider: React.FC<DividerProps> = ({ text }) => (

@@ -9,7 +9,10 @@ a {
   text-decoration: none;
 }
 
-h2, a, p, span {
+h2,
+a,
+p,
+span {
   user-select: none;
   margin: 0;
 }
