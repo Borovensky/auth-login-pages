@@ -1,14 +1,14 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import Headline from "../components/headline/headline";
 import Button from "../components/button/button";
 import Input from "../components/input/input";
 
-const NewPassword = () => {
+const NewPassword: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
-    console.log('')
+    // Reset Password api call...
   }
 
   return (

@@ -5,7 +5,7 @@ import Button from "../components/button/button";
 import Input from "../components/input/input";
 import Popup from "../components/popup/popup";
 
-const ForgotPassword = () => {
+const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");

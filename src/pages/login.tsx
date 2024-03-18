@@ -1,7 +1,7 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as GoogleLogo } from '../assets/google.svg';
-import { ReactComponent as GitHubLogo } from '../assets/github.svg';
+import { ReactComponent as GoogleLogo } from "../assets/google.svg";
+import { ReactComponent as GitHubLogo } from "../assets/github.svg";
 import Headline from "../components/headline/headline";
 import Button from "../components/button/button";
 import Divider from "../components/divider/divider";
@@ -81,7 +81,9 @@ const Login: React.FC = () => {
 						value={password}
 						onChange={value => setPassword(value)}
 					/>
-					<div className="small-text flex-end margin-bottom" ><Link to="/forgot-password">Forgot your password?</Link></div>
+					<div className="small-text flex-end margin-bottom">
+						<Link to="/forgot-password">Forgot your password?</Link>
+					</div>
 				</div>
 				<Button
 					onClick={() => null}

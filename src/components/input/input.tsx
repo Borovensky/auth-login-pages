@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import { useState } from "react"
 import { ReactComponent as EyeIcon } from "../../assets/eye.svg";
 import classNames from "../../utils/classnames";
 import "./input.scss"
@@ -12,7 +12,7 @@ type InputProps = {
   onChange: (value: string) => void,
 }
 
-const Input: FC<InputProps> = ({ id, type, placeholder, value, label, onChange }) => {
+const Input: React.FC<InputProps> = ({ id, type, placeholder, value, label, onChange }) => {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   return (
@@ -27,7 +27,7 @@ const Input: FC<InputProps> = ({ id, type, placeholder, value, label, onChange }
         onChange={e => onChange(e.target.value)}
         minLength={type === 'password' ? 8 : undefined}
         maxLength={type === 'password' ? 20 : undefined}
-        pattern={type === 'password' ? "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" : undefined}
+        pattern={type === 'password' ? ".{8,}" : undefined}
         title={type === 'password' ? 'Password should contain at least 8 characters' : undefined}
       />
       {type === "password"
@@ -42,7 +42,7 @@ const Input: FC<InputProps> = ({ id, type, placeholder, value, label, onChange }
           onClick={() => setPasswordVisible(!isPasswordVisible)}
           style={label ? { top: '36px' } : {}}
         />
-        ) 
+        )
         : null
       }
     </>

@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode, FC } from "react";
+import { MouseEvent, ReactNode } from "react";
 import classNames from "../../utils/classnames";
 import "./button.scss";
 
@@ -9,7 +9,7 @@ type ButtonProps = {
 	primary?: boolean,
 };
 
-const Button: FC<ButtonProps> = ({ children, onClick, submit, primary }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, submit, primary }) => {
 	
 	const onHandleClick = (event: MouseEvent<HTMLButtonElement>) => {
 		onClick();
