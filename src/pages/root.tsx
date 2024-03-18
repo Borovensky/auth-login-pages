@@ -21,7 +21,7 @@ const Root: React.FC = () => {
 
       const data = await response.json();
       if (data.error === 1) {
-        setError(data.detail);
+        setError(String(data.detail));
         setShowPopup(true);
         setTimeout(() => setShowPopup(false), 2000);
       }

@@ -36,7 +36,6 @@ const NewPassword: React.FC = () => {
           />
         </div>
         <Button
-          onClick={() => null}
           submit
           primary
         >

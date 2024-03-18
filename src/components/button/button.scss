@@ -11,6 +11,10 @@
 	z-index: 2;
 	position: relative;
 
+	&:disabled {
+		cursor: not-allowed;
+	}
+
 	span {
 		font-size: 14px;
 		line-height: 20px;

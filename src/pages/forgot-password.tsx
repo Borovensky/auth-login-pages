@@ -24,7 +24,7 @@ const ForgotPassword: React.FC = () => {
 
 			const data = await response.json();
 			if (data.error === 1) {
-        setError(data.detail);
+        setError(String(data.detail));
         setShowPopup(true);
         setTimeout(() => {
           setShowPopup(false)
@@ -52,6 +52,7 @@ const ForgotPassword: React.FC = () => {
 					onClick={() => null}
 					submit
 					primary
+          disabled={email.length === 0}
 				>
 					<p>Send</p>
 				</Button>

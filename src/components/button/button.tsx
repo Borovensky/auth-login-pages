@@ -4,15 +4,16 @@ import "./button.scss";
 
 type ButtonProps = {
 	children: ReactNode,
-	onClick: () => void,
+	onClick?: () => void,
 	submit?: boolean,
 	primary?: boolean,
+	disabled?: boolean,
 };
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, submit, primary }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, submit, disabled, primary }) => {
 	
 	const onHandleClick = (event: MouseEvent<HTMLButtonElement>) => {
-		onClick();
+		if (onClick) onClick();
 	}
 
 	return (
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, submit, primary }) =
 				)
 			}
 			onClick={onHandleClick}
+			disabled={disabled}
 			type={submit ? "submit" : "button"}
 		>
 			{children}

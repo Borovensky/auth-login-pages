@@ -29,7 +29,7 @@ const Login: React.FC = () => {
 
 			const data = await response.json();
 			if (data.error === 1) {
-        setError(data.detail);
+        setError(String(data.detail));
         setShowPopup(true);
         setTimeout(() => setShowPopup(false), 2000);
       }
@@ -86,9 +86,9 @@ const Login: React.FC = () => {
 					</div>
 				</div>
 				<Button
-					onClick={() => null}
 					submit
 					primary
+					disabled={email.length === 0 || password.length === 0}
 				>
 					<p>Log in to Qencode</p>
 				</Button>
